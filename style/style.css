@@ -11,10 +11,9 @@
     /* color: #f00000; */
 }
 
-
-.ff{
-    box-shadow: 
-  0px 1px 2px 0px #0000000f, 
-  0px 1px 3px 0px #0000001a;
-
-}
+/* .banner-bg{
+    background-image: url('assets/hero-leaf1.png'), url('assets/hero-leaf2.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: left bottom, right bottom;
+    background-size: 150px auto, 150px auto;
+} */
