@@ -54,7 +54,11 @@ const displayTreesCard =(TreesCards)=>{  //Display Trees Card
             priceCardContainer.appendChild(priceDiv);
             
 
-        
+            //Total Price Calculations
+            const initialPrice = getId('totalPrice').innerText;
+            const productPrice = TreesCard.price;
+            const totalPrice = Number(initialPrice) + Number(productPrice);
+            getId('totalPrice').innerText = totalPrice;
 
             });
 
