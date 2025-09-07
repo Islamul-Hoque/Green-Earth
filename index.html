@@ -93,7 +93,8 @@
                             </div>
                             <div><i class="fa-solid fa-xmark"></i></div>
                         </div>
-                        <hr class="text-[#8c8c8c] my-2">
+                        <div class="divider my-0"></div>
+                        <!-- <hr class="text-[#8c8c8c] my-2"> -->
                         <div class="flex justify-between items-center">
                             <h3 class="font-semibold">Total:</h3>
                             <p class="font-semibold">৳<span>1000</span></p>
@@ -146,9 +147,28 @@
         <!-- Plant a Tree Today -->
         <section class="bg-[#166534]">
             <h2 class="font-bold text-2xl text-white pt-12 pb-8 text-center">Plant a Tree Today</h2>
-            
+            <div class="flex justify-center items-center">
+                <div class="fieldset bg-[#15803d] bg-base-200  rounded-box w-[45%] p-6">
+                <input type="text" class="input w-full" placeholder="Your Name" />
+                <input type="email" class="input w-full" placeholder="Your Email Address" />
+                
+                <select class="select select-neutral w-full border-none">
+                    <option disabled selected>Number of Trees</option>
+                    <option>1 Tree - $5</option>
+                    <option>5 Tree - $25</option>
+                    <option>10 Tree - $50</option>
+                    
+                </select>
+
+                <button class="btn shadow-none border-none bg-[#facc15] text-[#15803d]">Donate Now</button>
+                </div>
+            </div>
+
         </section>
     </main>
+    <footer>
+        
+    </footer>
     <script src="script/script.js"></script>
 </body>
 </html>
