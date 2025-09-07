@@ -34,7 +34,7 @@
     <header>
         <nav class="flex justify-between items-center bg-[#15803d] px-3 md:px-8 py-3 md:py-5 text-white">
             <h2 class="font-bold text-[1.3rem] md:text-[1.77rem]">Green Earth</h2>
-            <ul class="flex justify-between items-center gap-2 md:gap-4 text-[0.83rem] md:text-[0.95rem]">
+            <ul class="hidden md:flex justify-between items-center gap-2 md:gap-4 text-[0.83rem] md:text-[0.95rem]">
                 <li><a href="">About</a></li>
                 <li><a href="">Gallery</a></li>
                 <li><a href="">Plant a Tree</a></li>
@@ -42,23 +42,23 @@
             <button class="btn shadow-none text-[0.8rem] md:text-[0.9rem] border-none bg-[#facc15] rounded-[1.5rem] text-[#15803d]">Plant a Tree</button>
         </nav>
 
-        <section class="bg-[#cff0dc] pt-3 flex justify-between gap-4">
-            <div><img class="block" src="assets/hero-leaf1.png" alt=""></div>
+        <section class="bg-[#cff0dc] py-8 md:pt-3 flex justify-between gap-3">
+            <div><img class="hidden sm:block" src="assets/hero-leaf1.png" alt=""></div>
             <div class="flex flex-col justify-center Black">
-                <h1 class="text-[2rem] font-bold">Plant a Tree, Grow a Future</h1>
-                <p class="text-[0.8rem] text-center mb-5">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
+                <h1 class="text-[1.5rem] md:text-[1.9rem] text-center font-bold">Plant a Tree, Grow a Future</h1>
+                <p class="text-[0.8rem] w-full text-center mb-5">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
                 <button class="btn w-fit mx-auto shadow-none border-none bg-[#facc15] rounded-[1.5rem] text-[#15803d]">Get Involved</button>
             </div>
-            <div><img class="block" src="assets/hero-leaf2.png" alt=""></div>
+            <div><img class="hidden sm:block" src="assets/hero-leaf2.png" alt=""></div>
         </section>
     </header>
     <main class="bg-[#f0fdf4]">
         <!-- Categories -->
         <section >
             <h2 class="font-bold text-xl text-center pt-8 mb-6 Black">Choose Your Trees</h2>
-            <div class="w-11/12 grid grid-cols-12 mx-auto gap-4">
+            <div class="w-11/12 grid md:grid-cols-12 mx-auto gap-4">
 
-                <div class="col-span-2">
+                <div class="md:col-span-2">
                     <h2 class="font-semibold text-xl Black mb-2">Categories</h2>
                     <div class="bg-[#15803d] my-2 py-2 pl-2 rounded-[0.4rem] text-white">All Trees</div>
                     <div id="categories-Container">
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="col-span-8 Black">
-                    <div class="grid grid-cols-3 gap-4">
+                    <div class="grid md:grid-cols-3 gap-4">
                         <div class="bg-white rounded-[1rem] p-4">
                             <img class="rounded-[0.8rem]" src="assets/about.png" alt="">
                             <h3 class="font-semibold  text-[1.1rem] mt-3">Mango Tree</h3>
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-2 Black bg-white p-4 rounded-[1rem]">
+                <div class="md:col-span-2 Black bg-white p-4 rounded-[1rem]">
                     <h2 class="font-semibold text-xl">Your Cart</h2>
                     <div id="price-card-container" class="mb-2">
                         <div class="bg-[#dcfce7] p-2 rounded-[0.6rem] my-2 flex justify-between items-center">
@@ -106,14 +106,14 @@
         </section>
 
         <!-- About the Campaign -->
-        <section class="w-7/12 mx-auto">
+        <section class=" mx-auto">
             <h2 class="text-center font-bold Black text-2xl mt-8 mb-6">About the Campaign</h2>
 
-            <div class="card card-side flex justify-between items-center -mx-4 gap-6">
-                <figure class="w-1/2">
+            <div class="card card-side flex flex-col md:justify-between items-center -mx-4 gap-6">
+                <figure class="md:w-1/2">
                     <img class="rounded-[0.65rem]" src="assets/about.png" alt="" />
                 </figure>
-                <div class="w-1/2 Black pr-4">
+                <div class="md:w-1/2 Black pr-4">
                     <p class="">Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
                     <ul class="list-disc pl-4 mt-4">
                         <li>Restoration of natural habitats</li>
