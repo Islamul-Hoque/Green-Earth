@@ -62,24 +62,12 @@
                     <h2 class="font-semibold text-xl Black mb-2">Categories</h2>
                     <div class="bg-[#15803d] my-2 py-2 pl-2 rounded-[0.4rem] text-white">All Trees</div>
                     <div id="categories-Container">
-                        <button class="btn btn-outline btn-success w-full Black my-1">Fruit Trees</button>
-                        <button class="btn btn-outline btn-success w-full Black my-1">Fruit Trees</button>
+                        <!-- <button class="btn btn-outline btn-success w-full Black my-1">Fruit Trees</button> -->
                     </div>
                 </div>
 
                 <div class="md:col-span-8 Black">
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="bg-white rounded-[1rem] p-4">
-                            <img class="rounded-[0.8rem]" src="assets/about.png" alt="">
-                            <h3 class="font-semibold  text-[1.1rem] mt-3">Mango Tree</h3>
-                            <p class="mt-2 text-[0.8rem] ">A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense green</p>
-                            <div class="flex justify-between items-center my-3 ">
-                                <div class="text-[#15803d] bg-[#dcfce7] text-[0.8rem] px-4 py-2 rounded-[1rem]">Fruit Tree</div>
-                                <div class="font-semibold">৳<span>500</span></div>
-                            </div>
-                            <button class="btn btn-success shadow-none text-white w-full rounded-[0.8rem]">Plant a Tree</button>
-                        </div>
-                    
+                    <div id="Trees-Card-Container" class="grid md:grid-cols-3 gap-4">
                     </div>
                 </div>
 
@@ -148,20 +136,17 @@
         <section class="bg-[#166534] py-12">
             <h2 class="font-bold text-2xl text-white pb-8 text-center">Plant a Tree Today</h2>
             <div class="flex justify-center items-center">
-                <div class="fieldset bg-[#15803d] bg-base-200  rounded-box w-[85%] md:w-[40%] p-6">
-                <input type="text" class="input w-full" placeholder="Your Name" />
-                <input type="email" class="input w-full" placeholder="Your Email Address" />
-                
-                <select class="select select-neutral w-full border-none">
-                    <option disabled selected>Number of Trees</option>
-                    <option>1 Tree - $5</option>
-                    <option>5 Tree - $25</option>
-                    <option>10 Tree - $50</option>
-                    
-                </select>
-
-                <button class="btn shadow-none border-none bg-[#facc15] text-[#15803d]">Donate Now</button>
-                </div>
+                <form class="fieldset bg-[#15803d] bg-base-200  rounded-box w-[85%] md:w-[40%] p-6">
+                    <input type="text" class="input w-full" placeholder="Your Name" required>
+                    <input type="email" class="input w-full" placeholder="Your Email Address" required>
+                    <select class="select select-neutral w-full border-none">
+                        <option disabled selected>Number of Trees</option>
+                        <option>1 Tree - $5</option>
+                        <option>5 Tree - $25</option>
+                        <option>10 Tree - $50</option>
+                    </select>
+                    <button class="btn shadow-none border-none bg-[#facc15] text-[#15803d]">Donate Now</button>
+                </form>
             </div>
 
         </section>
