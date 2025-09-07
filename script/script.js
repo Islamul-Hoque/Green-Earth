@@ -48,17 +48,29 @@ const displayTreesCard =(TreesCards)=>{  //Display Trees Card
                         <h3 class="font-semibold mb-1">${TreesCard.name}</h3>
                         <div class="text-[0.8rem]">৳<span>${TreesCard.price}</span> x 1</div>
                     </div>
-                    <div><i class="fa-solid fa-xmark"></i></div>
+                    <div><i class="cross fa-solid fa-xmark"></i></div>
                 </div>
             `;
             priceCardContainer.appendChild(priceDiv);
             
 
-            //Total Price Calculations
-            const initialPrice = getId('totalPrice').innerText;
-            const productPrice = TreesCard.price;
-            const totalPrice = Number(initialPrice) + Number(productPrice);
-            getId('totalPrice').innerText = totalPrice;
+                //Normal Total Price Calculations
+                const initialPrice = getId('totalPrice').innerText;
+                const productPrice = TreesCard.price;
+                const totalPrice = Number(initialPrice) + Number(productPrice);
+                getId('totalPrice').innerText = totalPrice;
+
+                //Remove Product Icon Functionalities
+                const crossBtn = priceDiv.querySelector('.cross');
+                crossBtn.addEventListener('click', ()=>{
+    
+                const initialPrice = getId('totalPrice').innerText;
+                const productPrice = TreesCard.price;
+                const totalPrice = Number(initialPrice) - Number(productPrice);
+                getId('totalPrice').innerText = totalPrice;
+
+                priceDiv.remove();
+                });
 
             });
 
