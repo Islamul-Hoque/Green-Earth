@@ -32,39 +32,58 @@
 </head>
 <body>
     <header>
-        <nav class="flex justify-between items-center bg-[#15803d] px-3 md:px-8 py-3 md:py-5 text-white">
-            <h2 class="font-bold text-[1.3rem] md:text-[1.77rem]">Green Earth</h2>
-            <ul class="hidden md:flex justify-between items-center gap-2 md:gap-4 text-[0.83rem] md:text-[0.95rem]">
-                <li><a href="">About</a></li>
-                <li><a href="">Gallery</a></li>
-                <li><a href="">Plant a Tree</a></li>
-            </ul>
-            <button class="btn shadow-none text-[0.8rem] md:text-[0.9rem] border-none bg-[#facc15] rounded-[1.5rem] text-[#15803d]">Plant a Tree</button>
+        <nav class="navbar bg-[#15803d] md:px-8 bg-base-100 shadow-sm">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn text-white  btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                    </div>
+
+                    <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#Gallery">Gallery</a></li>
+                        <li><a href="#Plant-a-Tree">Plant a Tree</a></li>
+                    </ul>
+                </div>
+                <h2 class="font-bold text-white text-[1.3rem] md:text-[1.77rem]">Green Earth</h2>
+            </div>
+
+            <div class="navbar-center lg:flex">
+                <ul class="hidden text-white md:flex justify-between items-center md:gap-4 md:text-[0.95rem]">
+                    <li><a class="link link-hover" href="#about">About</a></li>
+                    <li><a class="link link-hover" href="#Gallery">Gallery</a></li>
+                    <li><a class="link link-hover" href="#Plant-a-Tree">Plant a Tree</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-end"> <button class="btn shadow-none text-[0.8rem] md:text-[0.9rem] border-none bg-[#facc15] rounded-[1.5rem] text-[#15803d]">Plant a Tree</button> </div>
         </nav>
 
-        <section class="bg-[#cff0dc] py-8 md:pt-3 flex justify-between gap-3">
-            <div><img class="hidden sm:block" src="assets/hero-leaf1.png" alt=""></div>
-            <div class="flex flex-col justify-center Black">
+        <section class="bg-[#cff0dc] py-8 flex justify-center items-center bg-[length:300px_auto] md:[background-image:url('assets/hero-leaf1.png'),url('assets/hero-leaf2.png')] [background-position:left_bottom,right_bottom] bg-no-repeat">
+            <div class="flex flex-col justify-center items-center my-5 Black">
                 <h1 class="text-[1.5rem] md:text-[1.9rem] text-center font-bold">Plant a Tree, Grow a Future</h1>
-                <p class="text-[0.8rem] w-full text-center mb-5">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
+                <p class="text-[0.8rem] w-[75%] md:w-[70%] text-center mb-5">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
                 <button class="btn w-fit mx-auto shadow-none border-none bg-[#facc15] rounded-[1.5rem] text-[#15803d]">Get Involved</button>
             </div>
-            <div><img class="hidden sm:block" src="assets/hero-leaf2.png" alt=""></div>
         </section>
     </header>
+
     <main class="bg-[#f0fdf4]">
         <!-- Categories -->
-        <section >
+        <section id="Gallery">
             <h2 class="font-bold text-xl text-center pt-8 mb-6 Black">Choose Your Trees</h2>
             <div class="w-11/12 grid md:grid-cols-12 mx-auto gap-4">
 
                 <div class="md:col-span-2">
                     <h2 class="font-semibold text-xl Black mb-2">Categories</h2>
-                    <button id="all-Trees-Btn" class="btn btn-outline text-left justify-start border-none btn-success w-full Black my-1">All Trees</button>
+                    <button id="all-Trees-Btn" class="btn btn-outline text-left justify-start border-none btn-success w-full Black my-1 click-Remove active">All Trees</button>
                     <div id="categories-Container"> </div>
                 </div>
 
                 <div class="md:col-span-8 Black">
+                    <section id="spinner" class="flex justify-center items-center py-10 hidden">
+                        <span class="loading loading-dots loading-xl"></span>
+                    </section> 
                     <div id="Trees-Card-Container" class="grid md:grid-cols-3 gap-4 items-stretch">
                     </div>
                 </div>
@@ -90,13 +109,11 @@
         </section>
 
         <!-- About the Campaign -->
-        <section class="w-10/12 md:w-7/12 mx-auto">
+        <section id="about" class="w-10/12 md:w-7/12 mx-auto">
             <h2 class="text-center font-bold Black text-2xl mt-8 mb-6">About the Campaign</h2>
 
             <div class="card card-side flex flex-col md:flex-row md:justify-between items-center -mx-4 gap-6">
-                <figure class="md:w-1/2">
-                    <img class="rounded-[0.65rem]" src="assets/about.png" alt="" />
-                </figure>
+                <figure class="md:w-1/2"> <img class="rounded-[0.65rem]" src="assets/about.png" alt="" ></figure>
                 <div class="md:w-1/2 Black pr-4">
                     <p class="">Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
                     <ul class="list-disc pl-4 mt-4">
@@ -106,7 +123,6 @@
                     </ul>
                 </div>
             </div>
-
         </section>
 
         <!-- Our Impact -->
@@ -129,7 +145,7 @@
         </section>
 
         <!-- Plant a Tree Today -->
-        <section class="bg-[#166534] py-12">
+        <section id="Plant-a-Tree" class="bg-[#166534] py-12">
             <h2 class="font-bold text-2xl text-white pb-8 text-center">Plant a Tree Today</h2>
             <div class="flex justify-center items-center">
                 <form class="fieldset bg-[#15803d] bg-base-200  rounded-box w-[85%] md:w-[40%] p-6">
@@ -147,9 +163,12 @@
 
         </section>
     </main>
+
     <footer class="bg-[#14532d]">
         <P class="text-center text-white text-[0.8rem] py-6">&copy; 2025 Green Earth. All Rights Reserved.</P>
     </footer>
+
+    <!-- JS File -->
     <script src="script/script.js"></script>
 </body>
 </html>
