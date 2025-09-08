@@ -121,7 +121,7 @@ getId('all-Trees-Btn').addEventListener('click', () => {
 
     loadAllTrees();
 });
-// loadAllTrees();
+loadAllTrees();
 
 // Remove active class
 const clickRemoveActive =()=>{
