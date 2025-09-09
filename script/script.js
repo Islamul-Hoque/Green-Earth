@@ -3,7 +3,7 @@ function getId(id){
     return document.getElementById(id);
 }
 
-// Reusable Add to Cart function
+// Reusable Add to Cart Function
 const addToCartBtn = (tree) => {
     const priceCardContainer = getId('price-Card-Container');
 
@@ -33,7 +33,7 @@ const addToCartBtn = (tree) => {
     });
 };
 
-//Reusable Modal
+//Reusable Modal Function
 const displayTreeModal = (modal)=>{
     const treesModal = getId('trees_modal');
     treesModal.innerHTML = `
@@ -52,7 +52,7 @@ const displayTreeModal = (modal)=>{
     treesModal.showModal();
 }
 
-// Reusable Spinner
+// Reusable Spinner Function
 const manageSpinner =(status)=>{
     if(status == true){
         getId('spinner').classList.remove('hidden');
@@ -192,3 +192,21 @@ const displayCategories =(Categories)=>{
 }
 
 loadCategories();
+
+
+
+
+const name = "Ishfak";
+const assignmentMark = 60;
+
+// Concatenation
+console.log("Hi " + name + ", your assignment mark is " + assignmentMark);
+
+// Template Literal
+console.log(`Hi ${name}, your assignment mark is ${assignmentMark}`);
+
+// Multi-line
+console.log(`
+Hi ${name},
+Your assignment mark is ${assignmentMark}
+`);
