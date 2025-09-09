@@ -72,16 +72,22 @@ const loadCategories =()=> {
 }
 
 //Load All Trees from Api
-const loadAllTrees = ()=>{  
+const loadAllTrees = ()=>{
+    // Spinner added  
+    manageSpinner(true); 
+
     fetch('https://openapi.programming-hero.com/api/plants')
     .then(res => res.json())
-    .then(data => displayAllTrees(data.plants))
+    .then(data => {
+        displayAllTrees(data.plants)
+
+        // Spinner Removed
+        manageSpinner(false);
+    })
 }
 
-// Display All Trees
+// Display All Trees Card
 const displayAllTrees = (AllTrees)=>{
-    manageSpinner(true);
-
     const treesCardContainer = getId('Trees-Card-Container');
     treesCardContainer.innerHTML = '';
 
@@ -108,7 +114,6 @@ const displayAllTrees = (AllTrees)=>{
         TreesCardDiv.querySelector(".tree-Name")
         .addEventListener('click', () => displayTreeModal(AllTree));
     })
-    manageSpinner(false);
 };
 
 // Event listener for "All Trees" button
@@ -131,6 +136,9 @@ const clickRemoveActive =()=>{
 
 //load Trees Card from Api
 const loadTreesCard =(id)=> {  
+    // Spinner added
+    manageSpinner(true); 
+
     fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then(res => res.json())
     .then(data => {
@@ -142,14 +150,15 @@ const loadTreesCard =(id)=> {
         clickBtn.classList.add('active');
 
         displayTreesCard(data.plants);
+
+        // Spinner Removed
+        manageSpinner(false); 
     });
 }
 
 
 //Display Trees Card
 const displayTreesCard =(TreesCards)=>{  
-    manageSpinner(true);
-
     const treesCardContainer = getId('Trees-Card-Container');
     treesCardContainer.innerHTML = '';
 
@@ -177,7 +186,6 @@ const displayTreesCard =(TreesCards)=>{
             .addEventListener('click', () => displayTreeModal(TreesCard));
         });
 
-    manageSpinner(false);
 }
 
 // Display categories btn name 
@@ -195,18 +203,3 @@ loadCategories();
 
 
 
-
-const name = "Ishfak";
-const assignmentMark = 60;
-
-// Concatenation
-console.log("Hi " + name + ", your assignment mark is " + assignmentMark);
-
-// Template Literal
-console.log(`Hi ${name}, your assignment mark is ${assignmentMark}`);
-
-// Multi-line
-console.log(`
-Hi ${name},
-Your assignment mark is ${assignmentMark}
-`);
