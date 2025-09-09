@@ -1,4 +1,4 @@
-// Reusable get ID Function
+// Reusable get id Function
 function getId(id){
     return document.getElementById(id);
 }
@@ -12,7 +12,7 @@ const addToCartBtn = (tree) => {
         <div class="bg-[#dcfce7] p-4 md:p-2 rounded-[0.6rem] my-2 flex justify-between items-center gap-1">
             <div>
                 <h3 class="font-semibold mb-1">${tree.name}</h3>
-                <div class="text-[0.8rem]">৳<span>${tree.price}</span> x 1</div>
+                <div class="text-[0.8rem]">৳<span>${tree.price}</span> X 1</div>
             </div>
             <div><i class="cross fa-solid fa-xmark"></i></div>
         </div>`;
@@ -31,7 +31,7 @@ const addToCartBtn = (tree) => {
         getId('totalPrice').innerText = totalPrice;
         priceDiv.remove();
     });
-};
+}
 
 //Reusable Modal Function
 const displayTreeModal = (modal)=>{
@@ -39,14 +39,14 @@ const displayTreeModal = (modal)=>{
     treesModal.innerHTML = `
         <div class="modal-box shadow-lg">
             <div class="bg-white space-y-2">
-                <h2 class="font-semibold text-2xl">${modal.name}</h2>
+                <h2 class="font-semibold text-2xl Black">${modal.name}</h2>
                 <img class="rounded-[0.6rem] w-full h-56 md:h-52 object-cover" src="${modal.image}" alt="${modal.name}">
-                <div class="font-semibold mt-3">Category: <span class="font-normal">${modal.category}</span> </div>
-                <div class="font-semibold">Price: <span class="font-normal">৳${modal.price}</span> </div>
-                <div class="font-semibold">Description: <span class="font-normal">${modal.description}</span> </div>
+                <div class="font-semibold mt-3 Black">Category: <span class="font-normal">${modal.category}</span> </div>
+                <div class="font-semibold Black">Price: <span class="font-normal">৳${modal.price}</span> </div>
+                <div class="font-semibold Black">Description: <span class="font-normal">${modal.description}</span> </div>
             </div>
             <div class="modal-action">
-                <form method="dialog"> <button class="btn">Close</button></form>
+                <form method="dialog"> <button class="btn Black">Close</button></form>
             </div>
         </div>`
     treesModal.showModal();
@@ -64,14 +64,19 @@ const manageSpinner =(status)=>{
     }
 }
 
-//Categories single btn name load from Api
+// Reusable Alert Function
+const addAlert = (name) => {
+    alert(`${name.name} has been added to the cart.`);
+};
+
+// Load category left side buttons name from API
 const loadCategories =()=> { 
     fetch('https://openapi.programming-hero.com/api/categories')
     .then(res => res.json())
     .then(data => displayCategories(data.categories));
 }
 
-//Load All Trees from Api
+// Load All trees card by default from API
 const loadAllTrees = ()=>{
     // Spinner added  
     manageSpinner(true); 
@@ -86,7 +91,7 @@ const loadAllTrees = ()=>{
     })
 }
 
-// Display All Trees Card
+// Display by default All Trees Card
 const displayAllTrees = (AllTrees)=>{
     const treesCardContainer = getId('Trees-Card-Container');
     treesCardContainer.innerHTML = '';
@@ -108,15 +113,18 @@ const displayAllTrees = (AllTrees)=>{
 
             // Add to Cart handle function
             TreesCardDiv.querySelector(".addToCard")
-            .addEventListener('click', () => addToCartBtn(AllTree));
+            .addEventListener('click', () => {
+                addToCartBtn(AllTree)
+                addAlert(AllTree);
+            });
 
         // Only Name Click opens Modal
         TreesCardDiv.querySelector(".tree-Name")
         .addEventListener('click', () => displayTreeModal(AllTree));
     })
-};
+}
 
-// Event listener for "All Trees" button
+// Event listener for display All Trees card
 getId('all-Trees-Btn').addEventListener('click', () => {
     // Remove active class
     clickRemoveActive();
@@ -125,16 +133,16 @@ getId('all-Trees-Btn').addEventListener('click', () => {
     getId('all-Trees-Btn').classList.add('active');
 
     loadAllTrees();
-});
+})
 loadAllTrees();
 
-// Remove active class
+// Reusable Remove active class
 const clickRemoveActive =()=>{
     const clickRemove = document.querySelectorAll(".click-Remove");
     clickRemove.forEach(btn => btn.classList.remove('active'));
 }
 
-//load Trees Card from Api
+//Load specific category name from API
 const loadTreesCard =(id)=> {  
     // Spinner added
     manageSpinner(true); 
@@ -156,8 +164,7 @@ const loadTreesCard =(id)=> {
     });
 }
 
-
-//Display Trees Card
+//Display selected category Card
 const displayTreesCard =(TreesCards)=>{  
     const treesCardContainer = getId('Trees-Card-Container');
     treesCardContainer.innerHTML = '';
@@ -177,9 +184,12 @@ const displayTreesCard =(TreesCards)=>{
                 </div>`
             treesCardContainer.appendChild(TreesCardDiv)
 
-            // Add to Cart handle function
+            // Add to Cart function
             TreesCardDiv.querySelector(".addToCard")
-            .addEventListener('click', () => addToCartBtn(TreesCard));
+            .addEventListener('click', () => {
+                addToCartBtn(TreesCard);
+                addAlert(TreesCard);
+            });
 
             // Only Name Click opens Modal
             TreesCardDiv.querySelector(".tree-Name")
@@ -200,6 +210,3 @@ const displayCategories =(Categories)=>{
 }
 
 loadCategories();
-
-
-

@@ -6,11 +6,12 @@
     font-family: "Geist", sans-serif;
 }
 
+/* text-color */
 .Black{
     color: #1f2937;
-    /* color: #f00000; */
 }
 
+/* active-class */
 .active{
     background-color:#00bf83;
     color: white;
